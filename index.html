@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MacOS</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/apple.ico" type="image/x-icon"> <!-- Path to your favicon -->
+</head>
+
+<body>
+    <div class="background">
+        <!-- Taskbar directly on top of the wallpaper -->
+        <div class="taskbar">
+            <div class="taskbar-apps">
+                <div class="apps-section">
+                    <!-- App icons go here -->
+                    <div class="app-icon" onclick="openVSCode()">
+                        <img src="./assets/Visual_Studio_Code_1.35_icon.svg.png" alt="App 2" />
+                    </div>
+                    <div class="app-icon" onclick="openFileExplorer()">
+                        <img src="./assets/explorer.jpg" alt="App 3" />
+                    </div>
+                    <div class="app-icon">
+                        <img src="./assets/compass.png" alt="App 4" />
+                    </div>
+                    <div class="app-icon" onclick="openNotesWindow()">
+                        <img src="./assets/notes.png" alt="App 5" />
+                    </div>
+                    <div class="app-icon">
+                        <img src="./assets/settings.jpg" alt="App 6" />
+                    </div>
+                    <div class="app-icon" onclick="openGalleryWindow()">
+                        <img src="./assets/Preview.png" alt="App 7" />
+                    </div>
+                    <div class="app-icon">
+                        <img src="./assets/music.png" alt="App 8" />
+                    </div>
+                    <div class="app-icon">
+                        <img src="./assets/whatsapp.png" alt="App 9" />
+                    </div>
+                    <div class="app-icon">
+                        <img src="./assets/teit.jpg" alt="App 10" />
+                    </div>
+                    <!-- Add more app icons as needed -->
+                </div>
+            </div>
+        </div>
+
+        <!-- macOS Style File Explorer Window -->
+        <div id="file-explorer" class="window hidden">
+            <div class="window-header">
+                <button id="close-button" class="window-btn close">✕</button>
+                <button id="minimize-button" class="window-btn minimize">–</button>
+                <button id="maximize-button" class="window-btn maximize">□</button>
+                <h2 class="title">File Explorer</h2>
+            </div>
+            <div class="window-content">
+                <!-- Sidebar for navigation -->
+                <div class="sidebar">
+                    <div class="sidebar-item">
+                        <img src="./assets/Folder-Documents-icon.png" alt="Folder Icon" />
+                        <p>Documents</p>
+                    </div>
+                    <div class="sidebar-item">
+                        <img src="./assets/downloads.webp" alt="Folder Icon" />
+                        <p>Downloads</p>
+                    </div>
+                    <div class="sidebar-item">
+                        <img src="./assets/dropbox_folder_20794.webp" alt="Folder Icon" />
+                        <p>DropBox</p>
+                    </div>
+                    <div class="sidebar-item">
+                        <img src="./assets/Airdrop_Logo2022.png" alt="Folder Icon" />
+                        <p>AirDrop</p>
+                    </div>
+                    <div class="sidebar-item">
+                        <img src="./assets/icon-cleanshot-x.webp" alt="Folder Icon" />
+                        <p>ScreenShots</p>
+                    </div>
+                    <div class="sidebar-item">
+                        <img src="./assets/Application.avif" alt="Folder Icon" />
+                        <p>Applications</p>
+                    </div>
+                    <!-- Add more sidebar items as needed -->
+                </div>
+                <!-- Main area for file contents -->
+                <div class="main-area">
+                    <p class="empty-folder-message">This folder is empty.</p>
+                    <!-- Add file items here when a folder is selected -->
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Notes Window -->
+        <div id="notes-window" class="window hidden">
+            <div class="window-header">
+                <button id="notes-close-button" class="window-btn close">✕</button>
+                <button id="notes-minimize-button" class="window-btn minimize">–</button>
+                <button id="notes-maximize-button" class="window-btn maximize">□</button>
+                <h2 class="title">Notes</h2>
+            </div>
+            <div class="note-window-content">
+                <textarea placeholder="Write your notes here..."></textarea>
+            </div>
+        </div>
+
+        <!-- Gallery Window -->
+        <div id="gallery-window" class="window hidden">
+            <div class="window-header">
+                <button id="gallery-close-button" class="window-btn close">✕</button>
+                <button id="gallery-minimize-button" class="window-btn minimize">–</button>
+                <button id="gallery-maximize-button" class="window-btn maximize">□</button>
+                <h2 class="title">Gallery</h2>
+            </div>
+            <div class="gallery-content">
+                <div id="gallery" class="gallery-grid">
+                    <!-- Images will be dynamically added here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- VSCode Window -->
+    <div id="vscode-window" class="vscode-window hidden">
+        <div class="window-header">
+            <button id="vscode-close-button" class="window-btn close">✕</button>
+            <button id="vscode-minimize-button" class="window-btn minimize">–</button>
+            <button id="vscode-maximize-button" class="window-btn maximize">□</button>
+            <h2 class="title">Visual Studio Code</h2>
+        </div>
+        <div class="vscode-content">
+            <div class="editor-header">
+                <span class="file-name">Untitled-1</span>
+                <span class="file-type">plain text</span>
+            </div>
+            <div class="editor-body">
+                <p>console.log("Hello, world!");</p>
+            </div>
+            <div class="status-bar">
+                <span class="status-text">Ln 1, Col 1</span>
+                <span class="status-text">UTF-8</span>
+                <span class="status-text">Spaces: 4</span>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
